@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #f5f7fa;
+  background-color: #05070d;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0),
+    linear-gradient(rgba(26, 166, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 166, 255, 0.035) 1px, transparent 1px);
+  background-size: 26px 26px, 130px 130px, 130px 130px;
+}
+
+section {
+  position: relative;
+}
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 12% 8%, rgba(26, 166, 255, 0.07), transparent 38%),
+    radial-gradient(circle at 88% 85%, rgba(1, 233, 254, 0.06), transparent 42%);
+}
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b93a3;
+}
+
+.card-hover {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(91, 110, 245, 0.4);
+}
